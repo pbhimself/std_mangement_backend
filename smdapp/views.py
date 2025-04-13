@@ -21,7 +21,7 @@ class InserData(APIView):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         else:
-            return HttpResponse(serializer.errors, status=400)
+            return JsonResponse(serializer.errors, status=400)
         
 class ReadCSVFile(APIView):
     @csrf_exempt
